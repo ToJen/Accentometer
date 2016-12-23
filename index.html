@@ -12,7 +12,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" href="styles.css">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC|Chewy">
 	</head>
 	<body>
 
@@ -24,11 +24,11 @@
 		</div> -->
 
 			<div class="full container-fluid">
-				<div class="col-md-4 col-sm-4 col-xs-4 header-text">
+				<div class="header-text">
 					<h1 class="h1 header-title">ACCENTOMETER</h1>
-					<h4 class="h4 header-subtitle">HOW GOOD IS YOUR ACCENT?</h4>
+					<h4 class="h4 header-subtitle">You sabi your language well well?</h4>
 					<!-- <br><br> -->
-					<button class="btn btn-default header-scroll">Play Now!</button>
+					<button class="btn btn-default header-scroll">Find out <span class="glyphicon glyphicon-chevron-down"></span></button>
 				</div>
 			</div>
 
@@ -50,11 +50,37 @@
 				</ul>
 			</div>
 
-			<hr>
+			<!-- <hr> -->
 			
-			<iframe src="https://academo.org/demos/virtual-oscilloscope/?embedded=true" width="800" height="380"></iframe>
+			<!-- <iframe src="https://academo.org/demos/virtual-oscilloscope/?embedded=true" width="800" height="380"></iframe> -->
+
+			<hr>
+
+			<div class="container" id="display">
+				<div class="row">
+					<div class="col-md-8">
+						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" id="question-number">
+							<p id="number">6 of 20</p>
+						</div>
+						<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" id="question-word">
+							<p id="word">gfjhvebngbe</p>
+						</div>
+						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" id="total-score">
+							<p id="score">5</p>
+						</div>
+					</div>
+
+					<div class="col-md-4">
+
+					</div>
+
+				</div>	<!-- .row -->
+			</div>		<!-- .container -->
 
 		</div>
+
+		<br><br><br><br><br><br><br><br><br><br>
+		<br><br><br><br><br><br><br><br><br><br>
 
 		<footer class="footer">
 	    <div class="container">
