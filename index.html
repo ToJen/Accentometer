@@ -11,6 +11,10 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<!-- main wavesurfer.js lib -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.2.3/wavesurfer.min.js"></script>
+	<!-- wavesurfer.js microphone -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.2.3/plugin/wavesurfer.microphone.min.js"></script>
 		<link rel="stylesheet" href="styles.css">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC|Chewy">
 	</head>
@@ -48,7 +52,7 @@
 
 			<br>
 
-			<div class="container" id="display">
+			<div class="container-fluid" id="display">
 				<div class="row">
 					<div class="col-md-8" id="questions">
 						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" id="question-number">
@@ -56,15 +60,21 @@
 						</div>
 						<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" id="question-word">
 							<p id="word">gfjhvebngbe</p>
+
+							<div id="waveform"></div>
+							<p align="center">
+							  <button class="btn btn-primary btn-lg" onclick="microphone.start()">Record</button>
+							  <button class="btn btn-primary btn-lg" onclick="microphone.stop()">Stop</button>
+							</p>
 						</div>
 						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" id="total-score">
 							<p id="score">Score: 5 pts</p>
 						</div>
+					
 					</div>
 
 					<div class="col-md-4">
-						<div class="panel panel-default">
-							<table class="table table-hover table-bordered table-responsive">
+							<table class="table table-hover table-bordered">
 								<caption>Score Board</caption>
 								<thead>
 									<th>No.</th>
@@ -99,10 +109,15 @@
 									</tr>
 								</tbody>
 							</table>
+
+						<div class="container" id="share">
+
 						</div>
+
 					</div>
 
 				</div>	<!-- .row -->
+
 			</div>		<!-- .container -->
 
 		</div>
@@ -117,11 +132,45 @@
 	  </footer>
 
 	</body>
+
 	<script>
-		$("button").click(function() {
+		// for button scroll
+		$(".header-scroll").click(function() {
 		    $('html,body').animate({
 		        scrollTop: $(".main").offset().top},
 		        'slow');
 		});
+
+		var wavesurfer = WaveSurfer.create({ container: '#waveform', waveColor: 'violet' });
+
+		var microphone = Object.create(WaveSurfer.Microphone);
+
+		microphone.init({
+		    wavesurfer: wavesurfer
+		});
+
+		microphone.on('deviceReady', function(stream) {
+		    console.log('Device ready!', stream);
+		});
+		microphone.on('deviceError', function(code) {
+		    console.warn('Device error: ' + code);
+		});
+
+		// pause rendering
+		//microphone.pause();
+
+		// resume rendering
+		//microphone.play();
+
+		// stop visualization and disconnect microphone
+		//microphone.stopDevice();
+
+		// same as stopDevice() but also clears the wavesurfer canvas
+		microphone.stop();
+
+		// destroy the plugin
+		//microphone.destroy();
+
 	</script>
+
 </html>
