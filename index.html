@@ -62,9 +62,13 @@
 							<p id="word">gfjhvebngbe</p>
 
 							<div id="waveform"></div>
-							<p align="center">
-							  <button class="btn btn-primary btn-lg" onclick="microphone.start()">Record</button>
-							  <button class="btn btn-primary btn-lg" onclick="microphone.stop()">Stop</button>
+							<p id="controls" align="center">
+								<span role="button" class="glyphicon glyphicon-play btn-lg" onclick="microphone.play()"></span>
+								<span role="button" class="glyphicon glyphicon-pause btn-lg" onclick="microphone.pause()"></span>
+								<span role="button" class="glyphicon glyphicon-record btn-lg" onclick="microphone.start()"></span>
+								<span role="button" class="glyphicon glyphicon-stop btn-lg" onclick="microphone.stop()"></span>
+							  <!-- <button class="btn btn-primary" onclick="microphone.start()">Record</button> -->
+							  <!-- <button class="btn btn-primary" onclick="microphone.stop()">Stop</button> -->
 							</p>
 						</div>
 						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" id="total-score">
@@ -123,7 +127,7 @@
 		</div>
 
 		<br><br><br><br><br><br><br><br>
-		<br><br><br><br><br><br><br><br>
+		<!-- <br><br><br><br><br><br><br><br> -->
 
 		<footer class="footer">
 	    <div class="container">

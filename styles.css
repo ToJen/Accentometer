@@ -35,15 +35,25 @@
   border: 15px;
 }
 
+/*.glyphicon {
+  color: white;
+}*/
+
+#controls {
+  background-color: #8b5e99;
+  border-radius: 100px 100px 100px 100px;
+  width: 300px;
+}
+
 .table-bordered {
   border-width: 2px;
   border-radius: 100px 100px 100px 100px;
 }
 
-.table-striped > tbody > tr:nth-child(even) > td, 
+/*.table-striped > tbody > tr:nth-child(even) > td, 
 .table-striped > tbody > tr:nth-child(even) > th {
-  background-color: #8b5e99;
-}
+  background-color: #7a3c8a;
+}*/
 
 caption {
   text-align: center;
