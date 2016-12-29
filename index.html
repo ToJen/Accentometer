@@ -20,18 +20,20 @@
 	</head>
 	<body>
 
-			<div class="full container-fluid">
-				<div class="header-text">
-					<h1 class="h1 header-title">ACCENTOMETER</h1>
-					<h4 class="h4 header-subtitle">You sabi your language well well?</h4>
-					<!-- <br><br> -->
-					<button class="btn btn-default header-scroll">Find out <span class="glyphicon glyphicon-chevron-down"></span></button>
-				</div>
+		<div class="full">
+			<div class="header-text">
+				<h1 class="header-title">ACCENTOMETER</h1>
+				<h4 class="header-subtitle">You sabi your language well well?</h4>
+				<!-- <br><br> -->
+				<button class="btn btn-default header-scroll">Find out <span class="glyphicon glyphicon-chevron-down"></span></button>
 			</div>
+		</div>
 
-		<div class="container main" style="padding:1em">
-			<h1>Lorem Ipsum</h1>
-			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+		<div class="container" id="main" style="padding:1em">
+			<h1>What's this?</h1>
+			<p>Accentometer is a fun game that rates your accent based on how you pronounce words in Yoruba and Igbo.
+				<br><br><span class="well well-sm">More languages will be available soon!</span>
+			</p>
 
 			<hr>
 
@@ -41,7 +43,6 @@
 				</button>
 				<ul class="dropdown-menu">
 					<li class="dropdown-header">Available Languages</li>
-					<li><a href="#">Hausa</a></li>
 					<li><a href="#">Igbo</a></li>
 					<li><a href="#">Yoruba</a></li>
 				</ul>
@@ -67,9 +68,9 @@
 								<span role="button" class="glyphicon glyphicon-pause btn-lg" onclick="microphone.pause()"></span>
 								<span role="button" class="glyphicon glyphicon-record btn-lg" onclick="microphone.start()"></span>
 								<span role="button" class="glyphicon glyphicon-stop btn-lg" onclick="microphone.stop()"></span>
-							  <!-- <button class="btn btn-primary" onclick="microphone.start()">Record</button> -->
-							  <!-- <button class="btn btn-primary" onclick="microphone.stop()">Stop</button> -->
 							</p>
+						  <button class="btn btn-primary" onclick="microphone.start()">Record</button>
+						  <button class="btn btn-primary" onclick="microphone.stop()">Stop</button>
 						</div>
 						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" id="total-score">
 							<p id="score">Score: 5 pts</p>
@@ -141,7 +142,7 @@
 		// for button scroll
 		$(".header-scroll").click(function() {
 		    $('html,body').animate({
-		        scrollTop: $(".main").offset().top},
+		        scrollTop: $("#main").offset().top},
 		        'slow');
 		});
 
