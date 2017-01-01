@@ -1,5 +1,9 @@
-body, html {
+/*body, html {
   height: 100%;
+}*/
+
+body {
+  margin: 0px 0px;
 }
 
 /*.full {
@@ -11,48 +15,72 @@ body, html {
   overflow: hidden;
 }*/
 
-.full {
-  width:100%;
-  height:100%;
-  height:calc(100% - 1px);
-  background: url('imgs/unsplash-mic.jpg');
+#full {
+  background-image: url('imgs/unsplash-mic.jpg');
+  /*background-image: url('imgs/unsplash-mic2.jpg');*/
+  /*background-image:url(https://chrisaam.files.wordpress.com/2015/03/wallpaper-2846361.jpg);*/
   background-size:cover;
-  overflow: hidden;
+  background-position: center;
+  position: relative;
+  height:100vh;
 }
 
-.full img {
-  width:70%;
+.header {
+  position: absolute;
+  top: 50%;
+  text-align: center;
+  width: 100%;
+  color: #fff;
+  background: rgba(139,94,153,0.5);
+  font-size: 36px;
+  -ms-transform: translate(0,-50%); /* IE 9 */
+  -webkit-transform: translate(0,-50%); /* Safari */
+  transform: translate(0,-50%);  
+}
+
+.title {
+  font-family: "Chewy";
 }
 
 .header-text {
-	position: relative;
-	width: 50%;
+  position: absolute;
+	width: 100%;
 	height: 150px;
-	top: 25%;
-	left: 50%;	
-  transform: translate(-50%, 0);
-	background: rgba(139,94,153,0.5);
-  padding: 5px;
-  border-radius: 5px;
 	text-align:center;
+  top: 25%;
+  left: 50%;  
+  /*right: 10%;*/
+  transform: translate(-50%, 0);
+  background: rgba(139,94,153,0.5);
+  /*padding: 5px;*/
+  border-radius: 5px;
   color: white;
 }
 
-/*@media (max-width: @screen-xs) {
-    body{font-size: 50px;}
-}
-
-@media (max-width: @screen-sm) {
-    body{font-size: 14px;}
-}*/
 .header-title {
+  left: -50%;
+  /*width: 100%;*/
   font-family: "Chewy";
-  /*font-size: 72px;*/
   font-size: 45px;
 }
 
-.header-subtitle {
+/*.header-subtitle {
 
+}*/
+
+.header-scroll {
+  background: white;
+  /*border-radius: 0;*/
+  border-color: #8b5e99;
+  color: #8b5e99;
+}
+
+#main {
+  /*text-align:;*/
+  /*padding:100px 50px;*/
+  padding: 1em;
+  /*width:80%;*/
+  margin:0px auto;
 }
 
 #questions {
@@ -66,7 +94,7 @@ body, html {
 #controls {
   background-color: #8b5e99;
   border-radius: 100px 100px 100px 100px;
-  width: 250px;
+  /*width: 250px;*/
 }
 
 .table-bordered {

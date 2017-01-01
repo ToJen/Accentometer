@@ -3,33 +3,32 @@
 	<head>
 		<title>ACCENTOMETER || Rate your accent!</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!-- <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="w3-styles.css"> -->
 
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<!-- main wavesurfer.js lib -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.2.3/wavesurfer.min.js"></script>
-	<!-- wavesurfer.js microphone -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.2.3/plugin/wavesurfer.microphone.min.js"></script>
-		<link rel="stylesheet" href="styles.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.2.3/wavesurfer.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.2.3/plugin/wavesurfer.microphone.min.js"></script>
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC|Chewy">
+		<link rel="stylesheet" href="styles.css">
 	</head>
-	<body>
 
-		<div class="full">
-			<div class="header-text">
+	<body>
+	<!-- <div id="wrapper"> -->
+		<div id="full">
+			<!-- <div class="header-text">
 				<h1 class="header-title">ACCENTOMETER</h1>
 				<h4 class="header-subtitle">You sabi your language well well?</h4>
-				<!-- <br><br> -->
-				<button class="btn btn-default header-scroll">Find out <span class="glyphicon glyphicon-chevron-down"></span></button>
+				<button class="btn btn-default header-scroll" onclick="scrollDown()">PLAY NOW</button>
+			</div> -->
+			<div class="header col-sm-12 col-xs-12">
+				<h1 class="title">ACCENTOMETER</h1>
+				<h4 class="header-subtitle">You sabi your language well well?</h4>
+				<button class="btn btn-default header-scroll" onclick="scrollDown()">PLAY NOW</button>
 			</div>
 		</div>
 
-		<div class="container" id="main" style="padding:1em">
+		<div class="container" id="main">
 			<h1>What's this?</h1>
 			<p>Accentometer is a fun game that rates your accent based on how you pronounce words in Yoruba and Igbo.
 				<br><br><span class="well well-sm">More languages will be available soon!</span>
@@ -63,12 +62,20 @@
 							<p id="word">gfjhvebngbe</p>
 
 							<div id="waveform"></div>
-							<p id="controls" align="center">
-								<span role="button" class="glyphicon glyphicon-play btn-lg" onclick="microphone.play()"></span>
+							<div id="controls" align="center">
+								<!-- <span role="button" class="glyphicon glyphicon-play btn-lg" onclick="microphone.play()"></span>
 								<span role="button" class="glyphicon glyphicon-pause btn-lg" onclick="microphone.pause()"></span>
 								<span role="button" class="glyphicon glyphicon-record btn-lg" onclick="microphone.start()"></span>
-								<span role="button" class="glyphicon glyphicon-stop btn-lg" onclick="microphone.stop()"></span>
-							</p>
+								<span role="button" class="glyphicon glyphicon-stop btn-lg" onclick="microphone.stop()"></span> -->
+								<button class="btn btn-primary btn-xs" onclick="microphone.play()">
+									<span class="glyphicon glyphicon-play btn-lg"></span>Play</button>
+								<button class="btn btn-primary btn-xs" onclick="microphone.pause()">
+									<span class="glyphicon glyphicon-pause btn-lg"></span>Pause</button>
+								<button class="btn btn-primary btn-xs" onclick="microphone.start()">
+									<span class="glyphicon glyphicon-record btn-lg"></span>Record</button>
+								<button class="btn btn-primary btn-xs" onclick="microphone.stop()">
+									<span class="glyphicon glyphicon-stop btn-lg"></span>Stop</button>
+							</div>
 						  <button class="btn btn-primary" onclick="microphone.start()">Record</button>
 						  <button class="btn btn-primary" onclick="microphone.stop()">Stop</button>
 						</div>
@@ -136,15 +143,18 @@
 	    </div>
 	  </footer>
 
+	 <!-- </div> -->
 	</body>
 
 	<script>
 		// for button scroll
-		$(".header-scroll").click(function() {
+		function scrollDown() {
+		// $(".header-scroll").click(function() {
 		    $('html,body').animate({
 		        scrollTop: $("#main").offset().top},
 		        'slow');
-		});
+		// });
+		}
 
 		var wavesurfer = WaveSurfer.create({ container: '#waveform', waveColor: 'violet' });
 
