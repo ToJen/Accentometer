@@ -9,6 +9,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato|Chewy">
 		<link rel="stylesheet" href="styles.css">
 	</head>
@@ -60,23 +61,34 @@
 						</div>	<!-- .modal-header -->
 
 						<div class="modal-body">
+							<!-- <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" id="question-number">
+								<p id="number">6 of 20</p>
+							</div>
+
+							<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" id="question-word">
+								<p id="word">gfjhvebngbe</p>
+							</div>
+
+							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" id="total-score">
+								<p id="score">Score: 5 pts</p>
+							</div>
+							<br> -->
 							<div id="waveform"></div>
-							<p id="controls" align="center">
-								<span id="play" role="button" class="glyphicon glyphicon-play btn-lg" onclick="microphone.play()"></span>Play
-								<span id="pause" role="button" class="glyphicon glyphicon-pause btn-lg" onclick="microphone.pause()"></span>Pause
-								<span id="record" role="button" class="glyphicon glyphicon-record btn-lg" onclick="microphone.start()"></span>Record
-								<span id="stop" role="button" class="glyphicon glyphicon-stop btn-lg" onclick="microphone.stop()"></span>Stop
-							</p>
 						</div>	<!-- .modal-body -->
 
 						<div class="modal-footer">
-							<div class="col-md-2 col-sm-2 col-xs-3">
+							<div class="col-md-2 col-sm-2 col-xs-2">
 							  <button type="button" class="btn btn-primary buttons" id="previous">
 							  	<span class="glyphicon glyphicon-arrow-left"></span>
 							  </button>
 							</div>
-							<div class="col-md-8 col-sm-8 col-xs-6 text-justify" id="imgCaption"></div>
-							<div class="col-md-2 col-sm-2 col-xs-3">
+							<div class="col-md-8 col-sm-8 col-xs-8 text-justify" id="imgCaption">
+								<div class="container" id="controls" align="center">
+									<span id="record" role="button" class="glyphicon glyphicon-record btn-lg" onclick="microphone.start()"></span>Record
+									<span id="stop" role="button" class="glyphicon glyphicon-stop btn-lg" onclick="microphone.stop()"></span>Stop
+								</div>
+							</div>
+							<div class="col-md-2 col-sm-2 col-xs-2">
 							  <button type="button" class="btn btn-primary buttons" id="next">
 							  	<span class="glyphicon glyphicon-arrow-right"></span>
 							  </button>
@@ -89,23 +101,12 @@
 
 			<div class="row">
 
-				<div class="col-md-8" id="questions">
-
-					<!-- <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" id="question-number">
-						<p id="number">6 of 20</p>
-					</div>
-
-					<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" id="question-word">
-						<p id="word">gfjhvebngbe</p>
-					</div>
-
-					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" id="total-score">
-						<p id="score">Score: 5 pts</p>
-					</div> -->
-
+				<div class="col-md-8" id="demo">
+					<h3>How to play:</h3>
+					<p>blah blah blah blah blah</p>
 					<img src="imgs/saworoide.jpg" class="img-responsive" alt="The Saworoide in full colour by digitaltemi">
-				
-				</div>	<!-- #questions -->
+					<br>
+				</div>	<!-- #demo -->
 
 
 				<div class="col-md-4">
@@ -148,6 +149,28 @@
 
 					<div class="container" id="share">
 						<h2>Share with your friends</h2>
+
+						<!-- Twitter -->
+						<a href="http://twitter.com/share?url=https://urbanyooba.com&text=ACCENTOMETER" target="_blank" class="share-btn twitter">
+						    <i class="fa fa-twitter"></i>
+						</a>
+
+						<!-- Google Plus -->
+						<a href="https://plus.google.com/share?url=https://urbanyooba.com" target="_blank" class="share-btn google-plus">
+						    <i class="fa fa-google-plus"></i>
+						</a>
+
+						<!-- Facebook -->
+						<a href="http://www.facebook.com/sharer/sharer.php?u=https://urbanyooba.com" target="_blank" class="share-btn facebook">
+						    <i class="fa fa-facebook"></i>
+						</a>
+
+						<!-- Email -->
+						<a href="mailto:?subject=HMTL%20Share%20Buttons&body=https://urbanyooba.com" target="_blank" class="share-btn email">
+						    <i class="fa fa-envelope"></i>
+						</a>
+
+
 					</div>
 
 				</div>
@@ -158,13 +181,13 @@
 		</div>			<!-- #main -->
 
 		<br><br><br><br>
-		<!-- <br><br><br><br><br><br><br><br> -->
+
 		<p class="pull-right"><a href="#" id="backToTop" class="btn btn-primary btn-lg backToTop" role="button">
 			<span class="glyphicon glyphicon-chevron-up"></span></a></p>
 
 		<footer class="footer">
 	    <div class="container">
-	      <p class="dev-sign">Built by <a href="" target="blank">Tomisin</a> for urbanyooba | &copy; 2017</p>
+	      <p class="dev-sign">Built by <a href="https://www.linkedin.com/in/tomisinjenrola" target="blank">Tomisin</a> for urbanyooba | &copy; 2017</p>
 	    </div>
 	  </footer>
 
