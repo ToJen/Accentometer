@@ -4,188 +4,215 @@
 		<title>ACCENTOMETER || Rate your accent!</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.2.3/wavesurfer.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.2.3/plugin/wavesurfer.microphone.min.js"></script>
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC|Chewy">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato|Chewy">
 		<link rel="stylesheet" href="styles.css">
 	</head>
 
 	<body>
-	<!-- <div id="wrapper"> -->
+
 		<div id="full">
-			<!-- <div class="header-text">
-				<h1 class="header-title">ACCENTOMETER</h1>
-				<h4 class="header-subtitle">You sabi your language well well?</h4>
-				<button class="btn btn-default header-scroll" onclick="scrollDown()">PLAY NOW</button>
-			</div> -->
 			<div class="header col-sm-12 col-xs-12">
 				<h1 class="title">ACCENTOMETER</h1>
 				<h4 class="header-subtitle">You sabi your language well well?</h4>
-				<button class="btn btn-default header-scroll" onclick="scrollDown()">PLAY NOW</button>
+				<button class="btn btn-default header-scroll">START</button>
 			</div>
 		</div>
 
-		<div class="container" id="main">
+		<div class="container-fluid" id="main">
 			<h1>What's this?</h1>
-			<p>Accentometer is a fun game that rates your accent based on how you pronounce words in Yoruba and Igbo.
+			<hr>
+			<p>Accentometer is a fun game that rates your pronunciation of Yor&ugrave;b&aacute; words.
 				<br><br><span class="well well-sm">More languages will be available soon!</span>
 			</p>
+			<!-- <hr> -->
 
-			<hr>
-
-			<div class="dropdown">
+			<!-- <div class="dropdown">
 				<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
 					Select language <span class="caret"></span>
 				</button>
 				<ul class="dropdown-menu">
 					<li class="dropdown-header">Available Languages</li>
-					<li><a href="#">Igbo</a></li>
-					<li><a href="#">Yoruba</a></li>
+					<li><a href="#">Hausa</a></li>
+					<li><a href="#">Igbo</a></li> 
+					<li><a href="#">Yor&ugrave;b&aacute;</a></li>
 				</ul>
-			</div>
-
-			<!-- <hr>			
-			<iframe src="https://academo.org/demos/virtual-oscilloscope/?embedded=true" width="800" height="380"></iframe> -->
+			</div> -->
 
 			<br>
 
-			<div class="container-fluid" id="display">
-				<div class="row">
-					<div class="col-md-8" id="questions">
-						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" id="question-number">
-							<p id="number">6 of 20</p>
-						</div>
-						<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" id="question-word">
-							<p id="word">gfjhvebngbe</p>
+			<div class="row">
 
-							<div id="waveform"></div>
-							<div id="controls" align="center">
-								<!-- <span role="button" class="glyphicon glyphicon-play btn-lg" onclick="microphone.play()"></span>
-								<span role="button" class="glyphicon glyphicon-pause btn-lg" onclick="microphone.pause()"></span>
-								<span role="button" class="glyphicon glyphicon-record btn-lg" onclick="microphone.start()"></span>
-								<span role="button" class="glyphicon glyphicon-stop btn-lg" onclick="microphone.stop()"></span> -->
-								<button class="btn btn-primary btn-xs" onclick="microphone.play()">
-									<span class="glyphicon glyphicon-play btn-lg"></span>Play</button>
-								<button class="btn btn-primary btn-xs" onclick="microphone.pause()">
-									<span class="glyphicon glyphicon-pause btn-lg"></span>Pause</button>
-								<button class="btn btn-primary btn-xs" onclick="microphone.start()">
-									<span class="glyphicon glyphicon-record btn-lg"></span>Record</button>
-								<button class="btn btn-primary btn-xs" onclick="microphone.stop()">
-									<span class="glyphicon glyphicon-stop btn-lg"></span>Stop</button>
-							</div>
-						  <button class="btn btn-primary" onclick="microphone.start()">Record</button>
-						  <button class="btn btn-primary" onclick="microphone.stop()">Stop</button>
-						</div>
-						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" id="total-score">
-							<p id="score">Score: 5 pts</p>
-						</div>
-					
+				<div class="col-md-8" id="questions">
+
+					<!-- <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" id="question-number">
+						<p id="number">6 of 20</p>
 					</div>
 
-					<div class="col-md-4">
-							<table class="table table-hover table-bordered">
-								<caption>Score Board</caption>
-								<thead>
-									<th>No.</th>
-									<th>Name</th>
-									<th>Score</th>
-									<th>Attempts</th>
-								</thead>
-								<tbody>
-									<tr>
-										<td>1</td>
-										<td>Ade</td>
-										<td>10</td>
-										<td>1</td>
-									</tr>
-									<tr>
-										<td>2</td>
-										<td>Chike</td>
-										<td>20</td>
-										<td>10</td>
-									</tr>
-									<tr>
-										<td>3</td>
-										<td>Musa</td>
-										<td>12</td>
-										<td>5</td>
-									</tr>
-									<tr>
-										<td>4</td>
-										<td>Amaka</td>
-										<td>18</td>
-										<td>51</td>
-									</tr>
-								</tbody>
-							</table>
-
-						<div class="container" id="share">
-
-						</div>
-
+					<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" id="question-word">
+						<p id="word">gfjhvebngbe</p>
 					</div>
 
-				</div>	<!-- .row -->
+					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" id="total-score">
+						<p id="score">Score: 5 pts</p>
+					</div> -->
 
-			</div>		<!-- .container -->
+					<img src="imgs/saworoide.jpg" class="img-responsive" alt="The Saworoide in full colour by digitaltemi">
+				
+				</div>	<!-- #questions -->
 
-		</div>
+
+				<div class="col-md-4">
+
+					<table class="table table-hover table-bordered">
+						<caption>Score Board</caption>
+						<thead>
+							<th>No.</th>
+							<th>Name</th>
+							<th>Score</th>
+							<th>Attempts</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td>Ade</td>
+								<td>10</td>
+								<td>1</td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>Chike</td>
+								<td>20</td>
+								<td>10</td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td>Musa</td>
+								<td>12</td>
+								<td>5</td>
+							</tr>
+							<tr>
+								<td>4</td>
+								<td>Amaka</td>
+								<td>18</td>
+								<td>51</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<div class="container" id="share">
+						<h2>Share with your friends</h2>
+					</div>
+
+				</div>
+
+				<button type="button" class="btn btn-primary btn-lg" id="playBtn" data-toggle="modal" data-target="#game-modal">Play!</button>
+
+				<!-- Modal for asking questions-->
+				<div class="modal fade" id="game-modal" tabindex="-1" role="dialog" aria-hidden="true">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								  <span aria-hidden="true">&times;</span>
+								</button>
+								<h4 class="modal-title" id="Play!"></h4>
+							</div>	<!-- .modal-header -->
+
+							<div class="modal-body">
+								<div id="waveform"></div>
+								<p id="controls" align="center">
+									<span id="play" role="button" class="glyphicon glyphicon-play btn-lg" onclick="microphone.play()"></span>Play
+									<span id="pause" role="button" class="glyphicon glyphicon-pause btn-lg" onclick="microphone.pause()"></span>Pause
+									<span id="record" role="button" class="glyphicon glyphicon-record btn-lg" onclick="microphone.start()"></span>Record
+									<span id="stop" role="button" class="glyphicon glyphicon-stop btn-lg" onclick="microphone.stop()"></span>Stop
+								</p>
+							</div>	<!-- .modal-body -->
+
+							<div class="modal-footer">
+								<div class="col-md-2 col-sm-2 col-xs-3">
+								  <button type="button" class="btn btn-primary" id="previous">Previous</button>
+								</div>
+								<div class="col-md-8 col-sm-8 col-xs-6 text-justify" id="imgCaption"></div>
+								<div class="col-md-2 col-sm-2 col-xs-3">
+								  <button type="button" class="btn btn-primary" id="next">Next</button>
+								</div>
+							</div>	<!-- .modal-footer -->
+						</div>		<!-- .modal-content -->
+					</div>			<!-- .modal-dialog -->
+				</div>				<!-- .modal .fade -->	
+
+
+			</div>	<!-- .row -->
+
+		</div>			<!-- #main -->
 
 		<br><br><br><br><br><br><br><br>
+    <!-- <div id="waveform"></div>
+
+    <p align="center"> -->
+      <!-- <button class="btn btn-primary btn-lg" onclick="microphone.start()"> Start the mic</button>
+      <button class="btn btn-primary btn-lg" onclick="microphone.stop()"> Stop the mic</button> -->
+     <!--  <span id="play" role="button" class="glyphicon glyphicon-play btn-lg" onclick="microphone.play()"></span>Play
+      <span id="pause" role="button" class="glyphicon glyphicon-pause btn-lg" onclick="microphone.pause()"></span>Pause
+      <span id="record" role="button" class="glyphicon glyphicon-record btn-lg" onclick="microphone.start()"></span>Record
+      <span id="stop" role="button" class="glyphicon glyphicon-stop btn-lg" onclick="microphone.stop()"></span>Stop
+    </p> -->
 		<!-- <br><br><br><br><br><br><br><br> -->
 
 		<footer class="footer">
 	    <div class="container">
-	      <p class="dev-sign">Built by <a href="" target="blank">Tomisin</a> &copy 2016</p>
+	      <p class="dev-sign">Built by <a href="" target="blank">Tomisin</a> &copy; 2016</p>
 	    </div>
 	  </footer>
 
-	 <!-- </div> -->
-	</body>
-
 	<script>
-		// for button scroll
-		function scrollDown() {
-		// $(".header-scroll").click(function() {
-		    $('html,body').animate({
-		        scrollTop: $("#main").offset().top},
-		        'slow');
-		// });
-		}
 
+		// for button scroll
+		$(".header-scroll").click(function() {
+			$('html,body').animate({
+				scrollTop: $("#main").offset().top},
+				'slow');
+		});
+
+		// waveform script
 		var wavesurfer = WaveSurfer.create({ container: '#waveform', waveColor: 'violet' });
 
-		var microphone = Object.create(WaveSurfer.Microphone);
+    var microphone = Object.create(WaveSurfer.Microphone);
 
-		microphone.init({
-		    wavesurfer: wavesurfer
-		});
+    microphone.init({
+        wavesurfer: wavesurfer
+    });
 
-		microphone.on('deviceReady', function(stream) {
-		    console.log('Device ready!', stream);
-		});
-		microphone.on('deviceError', function(code) {
-		    console.warn('Device error: ' + code);
-		});
+    microphone.on('deviceReady', function(stream) {
+        console.log('Device ready!', stream);
+    });
+    microphone.on('deviceError', function(code) {
+        console.warn('Device error: ' + code);
+    });
 
-		// pause rendering
-		microphone.pause();
+    // pause rendering
+    //microphone.pause();
 
-		// resume rendering
-		microphone.play();
+    // resume rendering
+    //microphone.play();
 
-		// stop visualization and disconnect microphone
-		//microphone.stopDevice();
+    // stop visualization and disconnect microphone
+    //microphone.stopDevice();
 
-		// same as stopDevice() but also clears the wavesurfer canvas
-		microphone.stop();
+    // same as stopDevice() but also clears the wavesurfer canvas
+    // microphone.stop();
 
-		// destroy the plugin
-		//microphone.destroy();
+    // destroy the plugin
+    //microphone.destroy();
 
 	</script>
+
+</body>
 
 </html>
