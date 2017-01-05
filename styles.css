@@ -29,6 +29,16 @@ body {
   font-size: 50px;
 }
 
+.buttons{
+  background: #8b5e99;
+  border-color: white;
+}
+.buttons:hover, .buttons:focus, .buttons:active, .buttons:active:focus  {
+  background: white;
+  border-color: #8b5e99;
+  color: #8b5e99;
+}
+
 .header-scroll {
   background: white;
   border-color: #8b5e99;
@@ -37,7 +47,6 @@ body {
 
 #main {
   padding: 1em;
-  margin: 0px auto;
 }
 
 #questions {
@@ -65,18 +74,28 @@ body {
   background-color: #7a3c8a;
 }*/
 
-caption {
-  text-align: center;
-  color: black;
+.backToTop {
+  cursor: pointer;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  background-color: #8b5e99;
+  border-color: #7a3c8a;
+  opacity: 0.7;
+}
+.backToTop:hover, .backToTop:focus, .backToTop:active , .backToTop:active:focus {
+  color: #7a3c8a;
+  background-color: #fff;
+  border-color: #8b5e99;
+  opacity: 0.5;
 }
 
 .footer {
-  position: relative;
+  /*position: relative;*/
   bottom: 0;
   width: 100%;
-  /* Set the fixed height of the footer here */
   height: 60px;
-  /*background-color: #8b5e99;*/
   background-color: #7a3c8a;
 }
 .dev-sign {

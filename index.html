@@ -23,13 +23,13 @@
 			</div>
 		</div>
 
-		<div class="container-fluid" id="main">
+		<div class="container" id="main">
+
 			<h1>What's this?</h1>
 			<hr>
 			<p>Accentometer is a fun game that rates your pronunciation of Yor&ugrave;b&aacute; words.
 				<br><br><span class="well well-sm">More languages will be available soon!</span>
 			</p>
-			<!-- <hr> -->
 
 			<!-- <div class="dropdown">
 				<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
@@ -44,6 +44,48 @@
 			</div> -->
 
 			<br>
+
+			<button type="button" class="btn btn-primary btn-lg buttons" id="playBtn" data-toggle="modal" data-target="#game-modal">Play!</button>
+
+			<!-- Modal for asking questions-->
+			<div class="modal fade" id="game-modal" tabindex="-1" role="dialog" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							  <span aria-hidden="true">&times;</span>
+							</button>
+							<h4 class="modal-title" id="Play!"></h4>
+						</div>	<!-- .modal-header -->
+
+						<div class="modal-body">
+							<div id="waveform"></div>
+							<p id="controls" align="center">
+								<span id="play" role="button" class="glyphicon glyphicon-play btn-lg" onclick="microphone.play()"></span>Play
+								<span id="pause" role="button" class="glyphicon glyphicon-pause btn-lg" onclick="microphone.pause()"></span>Pause
+								<span id="record" role="button" class="glyphicon glyphicon-record btn-lg" onclick="microphone.start()"></span>Record
+								<span id="stop" role="button" class="glyphicon glyphicon-stop btn-lg" onclick="microphone.stop()"></span>Stop
+							</p>
+						</div>	<!-- .modal-body -->
+
+						<div class="modal-footer">
+							<div class="col-md-2 col-sm-2 col-xs-3">
+							  <button type="button" class="btn btn-primary buttons" id="previous">
+							  	<span class="glyphicon glyphicon-arrow-left"></span>
+							  </button>
+							</div>
+							<div class="col-md-8 col-sm-8 col-xs-6 text-justify" id="imgCaption"></div>
+							<div class="col-md-2 col-sm-2 col-xs-3">
+							  <button type="button" class="btn btn-primary buttons" id="next">
+							  	<span class="glyphicon glyphicon-arrow-right"></span>
+							  </button>
+							</div>
+						</div>	<!-- .modal-footer -->
+					</div>		<!-- .modal-content -->
+				</div>			<!-- .modal-dialog -->
+			</div>				<!-- .modal .fade -->	
+			<hr>
 
 			<div class="row">
 
@@ -110,74 +152,43 @@
 
 				</div>
 
-				<button type="button" class="btn btn-primary btn-lg" id="playBtn" data-toggle="modal" data-target="#game-modal">Play!</button>
-
-				<!-- Modal for asking questions-->
-				<div class="modal fade" id="game-modal" tabindex="-1" role="dialog" aria-hidden="true">
-					<div class="modal-dialog" role="document">
-						<div class="modal-content">
-
-							<div class="modal-header">
-								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-								  <span aria-hidden="true">&times;</span>
-								</button>
-								<h4 class="modal-title" id="Play!"></h4>
-							</div>	<!-- .modal-header -->
-
-							<div class="modal-body">
-								<div id="waveform"></div>
-								<p id="controls" align="center">
-									<span id="play" role="button" class="glyphicon glyphicon-play btn-lg" onclick="microphone.play()"></span>Play
-									<span id="pause" role="button" class="glyphicon glyphicon-pause btn-lg" onclick="microphone.pause()"></span>Pause
-									<span id="record" role="button" class="glyphicon glyphicon-record btn-lg" onclick="microphone.start()"></span>Record
-									<span id="stop" role="button" class="glyphicon glyphicon-stop btn-lg" onclick="microphone.stop()"></span>Stop
-								</p>
-							</div>	<!-- .modal-body -->
-
-							<div class="modal-footer">
-								<div class="col-md-2 col-sm-2 col-xs-3">
-								  <button type="button" class="btn btn-primary" id="previous">Previous</button>
-								</div>
-								<div class="col-md-8 col-sm-8 col-xs-6 text-justify" id="imgCaption"></div>
-								<div class="col-md-2 col-sm-2 col-xs-3">
-								  <button type="button" class="btn btn-primary" id="next">Next</button>
-								</div>
-							</div>	<!-- .modal-footer -->
-						</div>		<!-- .modal-content -->
-					</div>			<!-- .modal-dialog -->
-				</div>				<!-- .modal .fade -->	
-
 
 			</div>	<!-- .row -->
 
 		</div>			<!-- #main -->
 
-		<br><br><br><br><br><br><br><br>
-    <!-- <div id="waveform"></div>
-
-    <p align="center"> -->
-      <!-- <button class="btn btn-primary btn-lg" onclick="microphone.start()"> Start the mic</button>
-      <button class="btn btn-primary btn-lg" onclick="microphone.stop()"> Stop the mic</button> -->
-     <!--  <span id="play" role="button" class="glyphicon glyphicon-play btn-lg" onclick="microphone.play()"></span>Play
-      <span id="pause" role="button" class="glyphicon glyphicon-pause btn-lg" onclick="microphone.pause()"></span>Pause
-      <span id="record" role="button" class="glyphicon glyphicon-record btn-lg" onclick="microphone.start()"></span>Record
-      <span id="stop" role="button" class="glyphicon glyphicon-stop btn-lg" onclick="microphone.stop()"></span>Stop
-    </p> -->
+		<br><br><br><br>
 		<!-- <br><br><br><br><br><br><br><br> -->
+		<p class="pull-right"><a href="#" id="backToTop" class="btn btn-primary btn-lg backToTop" role="button">
+			<span class="glyphicon glyphicon-chevron-up"></span></a></p>
 
 		<footer class="footer">
 	    <div class="container">
-	      <p class="dev-sign">Built by <a href="" target="blank">Tomisin</a> &copy; 2016</p>
+	      <p class="dev-sign">Built by <a href="" target="blank">Tomisin</a> for urbanyooba | &copy; 2017</p>
 	    </div>
 	  </footer>
 
 	<script>
 
-		// for button scroll
+		// scroll down to page
 		$(".header-scroll").click(function() {
 			$('html,body').animate({
 				scrollTop: $("#main").offset().top},
 				'slow');
+		});
+
+
+		// scroll to top
+		$(window).scroll(function() {
+			if ($(this).scrollTop() > 50) 
+				$("#backToTop").fadeIn();
+			else
+				$("#backToTop").fadeOut();
+		});
+
+		$("#backToTop").click(function() {
+		  $("html, body").animate({scrollTop: 10}, 800);
+		  return false;
 		});
 
 		// waveform script
