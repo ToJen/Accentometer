@@ -55,12 +55,14 @@ body {
 
 #waveform {
   outline: 1px solid purple;
+ /* overflow: auto;
+  width: 500px;*/
 }
 
 #controls {
   background-color: #8b5e99;
-  border-radius: 100px 100px 100px 100px;
-  width: 70%;
+  border-radius: 50px 50px 50px 50px;
+  width: 100%;
 }
 
 .table-bordered {
