@@ -60,9 +60,13 @@ body {
 }
 
 #controls {
-  background-color: #8b5e99;
+ /* background-color: #8b5e99;
   border-radius: 50px 50px 50px 50px;
-  width: 100%;
+  width: 100%;*/
+}
+#controls .btn{
+  background-color: #8b5e99;
+  /*border-radius: 50px 50px 50px 50px;*/
 }
 
 .table-bordered {
