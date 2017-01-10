@@ -1,4 +1,5 @@
 demo*
 modal.html
-
+*.xlsx
+debug.png
 .gitignore
