@@ -101,3 +101,4 @@ function getWord(level)
 	}*/
 }
 
+// var word = document.get

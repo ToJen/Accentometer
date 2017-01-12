@@ -46,10 +46,10 @@
 
 			<br>
 
-			<button type="button" class="btn btn-primary btn-lg buttons" id="playBtn" data-toggle="modal" data-target="#game-modal">Play!</button>
+			<button type="button" class="btn btn-primary btn-lg buttons" id="playBtn" data-toggle="modal" data-target="#question-modal">Play!</button>
 
 			<!-- Modal for asking questions-->
-			<div class="modal fade" id="game-modal" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal fade" id="question-modal" tabindex="-1" role="dialog" aria-hidden="true">
 				<div class="modal-dialog" role="document">
 					<div class="modal-content">
 
@@ -57,30 +57,37 @@
 							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 							  <span aria-hidden="true">&times;</span>
 							</button>
-							<h4 class="modal-title" id="Play!"></h4>
+							<h4 class="modal-title">Play Accentometer by urbanyooba!</h4>
 						</div>	<!-- .modal-header -->
 
 						<div class="modal-body">
-							<!-- <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" id="question-number">
-								<p id="number">6 of 20</p>
-							</div>
-
-							<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" id="question-word">
-								<p id="word">gfjhvebngbe</p>
-							</div>
-
-							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" id="total-score">
-								<p id="score">Score: 5 pts</p>
-							</div>
-							<br> -->
-							<!-- <div class="container"> -->
-								<div id="waveform"></div>
-								<br>
-								<div id="controls" align="center">
-									<button class="btn btn-default btn-lg" onclick="microphone.start()"><span id="record" class="glyphicon glyphicon-record"></span> Record</button>
-									<button class="btn btn-default btn-lg" onclick="microphone.stop()"><span id="stop" class="glyphicon glyphicon-stop"></span> Stop</button>
+							<div class="row">
+								<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+									<p id="question-number">Question:<br>6 of 20</p>
 								</div>
-							<!-- </div> -->
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+									<p align="left" id="question-word">gfjhvebngbe test</p>
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+									<p id="total-score">Score:<br>5 pts</p>
+								</div>
+							</div>
+
+							<hr>
+
+							<div class="container-fluid row">
+								<div id="waveform"></div>
+								<hr>
+							</div>
+
+							<br>
+							
+							<div class="row">
+								<div id="controls" align="center">
+									<button class="btn btn-default btn-lg" onclick="microphone.start()"><span class="glyphicon glyphicon-record"></span> Record</button>
+									<button class="btn btn-default btn-lg" onclick="microphone.stop()"><span class="glyphicon glyphicon-stop"></span> Stop</button>
+								</div>
+							</div>
 						</div>	<!-- .modal-body -->
 
 						<div class="modal-footer">
@@ -116,7 +123,7 @@
 				<div class="col-md-4">
 
 					<table class="table table-hover table-bordered">
-						<caption>Score Board</caption>
+						<caption>Leader Board</caption>
 						<thead>
 							<th>No.</th>
 							<th>Name</th>
@@ -152,7 +159,7 @@
 					</table>
 
 					<div class="container" id="share">
-						<h2>Share with your friends</h2>
+						<h3>Don't enjoy this alone!<br>Share with your friends:</h3>
 
 						<!-- Twitter -->
 						<a href="http://twitter.com/share?url=https://urbanyooba.com&text=ACCENTOMETER" target="_blank" class="share-btn twitter">
@@ -204,7 +211,6 @@
 				'slow');
 		});
 
-
 		// scroll to top
 		$(window).scroll(function() {
 			if ($(this).scrollTop() > 50) 
@@ -219,7 +225,11 @@
 		});
 
 		// waveform script
-		var wavesurfer = WaveSurfer.create({ container: '#waveform', waveColor: 'violet' });
+		var wavesurfer = WaveSurfer.create({
+			container: '#waveform',
+			waveColor: 'violet',
+			hideScrollbar: true
+		});
 
     var microphone = Object.create(WaveSurfer.Microphone);
 
@@ -244,10 +254,15 @@
     //microphone.stopDevice();
 
     // same as stopDevice() but also clears the wavesurfer canvas
-    // microphone.stop();
+    microphone.stop();
 
     // destroy the plugin
     //microphone.destroy();
+
+    // wavesurfer.on('ready', function() {
+    // 	wavesurfer.zoom(100);
+    // 	console.log("zoomed");
+    // });
 
 	</script>
 

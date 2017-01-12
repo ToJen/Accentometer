@@ -49,14 +49,16 @@ body {
   padding: 1em;
 }
 
-#questions {
-  border: 15px;
+#question-word {
+  font-family: "Chewy";
+  font-size: 20pt;
 }
 
 #waveform {
   outline: 1px solid purple;
  /* overflow: auto;
   width: 500px;*/
+  /*zoom: 200%;*/
 }
 
 #controls {
@@ -66,7 +68,7 @@ body {
 }
 #controls .btn{
   background-color: #8b5e99;
-  /*border-radius: 50px 50px 50px 50px;*/
+  color: white;
 }
 
 .table-bordered {
