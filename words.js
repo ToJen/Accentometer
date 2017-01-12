@@ -76,3 +76,28 @@ var hard = {
 	"onígbèjà"                              : "Ally"
 
 };
+
+function getWord(level)
+{
+	var rand = Math.floor(Math.random()*level.length);
+	return level[rand];
+
+	/*if(level == "easy") {
+		// for (var i = 0; i < easy.length; i++) {
+		// 	easy[i]
+		// }
+		rand = Math.floor(Math.random()*easy.length);
+		return easy[rand];
+	}
+
+	else if(level == "medium") {
+		rand = Math.floor(Math.random()*medium.length);
+		return medium[rand];
+	}
+
+	else (level == "hard") {
+		rand = Math.floor(Math.random()*hard.length);
+		return hard[rand];
+	}*/
+}
+
