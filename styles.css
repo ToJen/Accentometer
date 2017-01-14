@@ -116,6 +116,10 @@ body {
   color: #000;
 }
 
+#share {
+  padding-bottom: 30px;
+}
+
 /* share buttons */
 .share-btn {
     display: inline-block;
