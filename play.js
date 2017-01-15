@@ -1,31 +1,50 @@
 $(document).ready(function() {
 
 	// $('#previous, #next').click(function() {
+		
 	$('#next').click(function() {
 		var txt;
 
-		if($('input[name=lang]:checked').val() === "yoruba") {
-			// console.log("yoruba");
-			if($('input[name=level]:checked').val() === "easy") {
-				// console.log("easy");
-				txt = getWord("easy");
-				console.log(txt.concat("\teasy"));
-			}
-			else if($('input[name=level]:checked').val() === "medium") {
-				// console.log("easy");
-				txt = getWord("medium");
-				console.log(txt.concat("\tmedium"));
-			}
-			else {
-				txt = getWord("hard");
-				console.log(txt.concat("\thard"));
-			}
-		}
-		// var txt = pickRandomWord("easy");
-		$("#question-word").html(txt);
-	});
+		// if($('input[name=lang]:checked').val() === "yoruba") {
+		// 	// console.log("yoruba");
+		// 	if($('input[name=level]:checked').val() === "easy") {
+		// 		// console.log("easy");
+		// 		txt = getWord("easy");
+		// 		console.log(txt.concat("\teasy"));
+		// 	}
+		// 	else if($('input[name=level]:checked').val() === "medium") {
+		// 		// console.log("easy");
+		// 		txt = getWord("medium");
+		// 		console.log(txt.concat("\tmedium"));
+		// 	}
+		// 	else if($('input[name=level]:checked').val() === "hard") {
+		// 		txt = getWord("hard");
+		// 		console.log(txt.concat("\thard"));
+		// 	}
+		// 	else {	// mixed
+		// 		txt = getWord("hard");
+		// 		console.log(txt.concat("\thard"));
+		// 	}
+		// }
 
-	// words.js
+		switch($('input[name=level]:checked').val())
+		{
+			case "easy":
+				txt = getWord("easy");
+				break;
+			case "medium":
+				txt = getWord("medium");
+				break;
+			case "hard":
+				txt = getWord("hard");
+				break;
+			default:
+				txt = getWord("mixed");
+		}
+
+		$("#question-word").html(txt);
+
+	});
 
 	var easy = {
 
@@ -106,19 +125,6 @@ $(document).ready(function() {
 
 	};
 
-	// function pickRandomWord(obj) {
-	//     var result;
-	//     var count = 0;
-	//     for (var prop in obj)
-	//       if (Math.random() < 1/++count)
-	//          result = prop;
-
-	//     console.log(result);
-	//     return result;
-	// }
-
-	// console.log(Object.keys(easy).length);
-
 	function getWord(level)
 	{
 
@@ -134,7 +140,6 @@ $(document).ready(function() {
 				}
 				count++;
 			}
-			// console.log(rand);	// debug
 			return result;
 		}
 
@@ -148,11 +153,10 @@ $(document).ready(function() {
 				}
 				count++;
 			}
-			// console.log(medium);	// debug
 			return result;
 		}
 
-		else {
+		else if(level == "hard") {
 			var count = 0;
 			var result;
 			for(var key in hard) {
@@ -162,7 +166,6 @@ $(document).ready(function() {
 				}
 				count++;
 			}
-			// console.log(hard);	// debug
 			return result;
 		}
 	}
