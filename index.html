@@ -3,6 +3,7 @@
 	<head>
 		<title>ACCENTOMETER || Rate your accent!</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="UTF-8">
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.2.3/wavesurfer.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.2.3/plugin/wavesurfer.microphone.min.js"></script>
@@ -53,8 +54,8 @@
 			<div class="container row" id="settings">
 				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
 					<h4>Select language</h4>
-					<label class="radio"><input type="radio" name="lang" value="yoruba" checked>Yor&ugrave;b&aacute;</label>
-					<label class="radio"><input type="radio" name="lang" value="igbo" disabled>Igbo</label>
+					<label class="radio" id="yoruba"><input type="radio" name="lang" value="yoruba" checked>Yor&ugrave;b&aacute;</label>
+					<label class="radio" id="igbo"><input type="radio" name="lang" value="igbo" disabled>Igbo</label>
 				</div>
 				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
 					<h4>Select level</h4>
@@ -89,6 +90,7 @@
 								</div>
 								<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 									<p id="total-score">Score:<br>5 pts</p>
+										<!-- &#7885;&#769; -->
 								</div>
 							</div>
 
