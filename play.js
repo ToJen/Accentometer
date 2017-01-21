@@ -1,51 +1,5 @@
 $(document).ready(function() {
 
-	// $('#previous, #next').click(function() {
-
-	$('#next').click(function() {
-		var txt;
-
-		// if($('input[name=lang]:checked').val() === "yoruba") {
-		// 	// console.log("yoruba");
-		// 	if($('input[name=level]:checked').val() === "easy") {
-		// 		// console.log("easy");
-		// 		txt = getWord("easy");
-		// 		console.log(txt.concat("\teasy"));
-		// 	}
-		// 	else if($('input[name=level]:checked').val() === "medium") {
-		// 		// console.log("easy");
-		// 		txt = getWord("medium");
-		// 		console.log(txt.concat("\tmedium"));
-		// 	}
-		// 	else if($('input[name=level]:checked').val() === "hard") {
-		// 		txt = getWord("hard");
-		// 		console.log(txt.concat("\thard"));
-		// 	}
-		// 	else {	// mixed
-		// 		txt = getWord("hard");
-		// 		console.log(txt.concat("\thard"));
-		// 	}
-		// }
-
-		switch($('input[name=level]:checked').val())
-		{
-			case "easy":
-				txt = getWord("easy");
-				break;
-			case "medium":
-				txt = getWord("medium");
-				break;
-			case "hard":
-				txt = getWord("hard");
-				break;
-			default:
-				txt = getWord("mixed");
-		}
-
-		$("#question-word").html(txt);
-
-	});
-
 	var easy = {
 
 		"\u1ECDl\u00E1"    : "Wealth",
@@ -125,49 +79,85 @@ $(document).ready(function() {
 
 	};
 
+	// $('#previous, #next').click(function() {
+
+	$('#next').click(function() {
+		var txt;
+
+		// if($('input[name=lang]:checked').val() === "yoruba") {
+		// 	// console.log("yoruba");
+		// 	if($('input[name=level]:checked').val() === "easy") {
+		// 		// console.log("easy");
+		// 		txt = getWord("easy");
+		// 		console.log(txt.concat("\teasy"));
+		// 	}
+		// 	else if($('input[name=level]:checked').val() === "medium") {
+		// 		// console.log("easy");
+		// 		txt = getWord("medium");
+		// 		console.log(txt.concat("\tmedium"));
+		// 	}
+		// 	else if($('input[name=level]:checked').val() === "hard") {
+		// 		txt = getWord("hard");
+		// 		console.log(txt.concat("\thard"));
+		// 	}
+		// 	else {	// mixed
+		// 		txt = getWord("hard");
+		// 		console.log(txt.concat("\thard"));
+		// 	}
+		// }
+
+		switch($('input[name=level]:checked').val())
+		{
+			case "easy":
+				txt = getWord(easy);
+				break;
+			case "medium":
+				txt = getWord(medium);
+				break;
+			case "hard":
+				txt = getWord(hard);
+				break;
+			default:
+				txt = getMixed();
+		}
+
+		$("#question-word").html(txt);
+
+	});
+
 	function getWord(level)
 	{
-
-		var rand = Math.floor(Math.random()*Object.keys(easy).length);
-
-		if(level === "easy") {
-			var count = 0;
-			var result;
-			for(var key in easy) {
-				if(count == rand){
-					result = key;
-					break;
-				}
-				count++;
+		var rand = Math.floor(Math.random()*Object.keys(level).length);
+		var count = 0;
+		var result;
+		for(var key in level) {
+			if(count == rand){
+				result = key;
+				break;
 			}
-			return result;
+			count++;
 		}
-
-		else if(level == "medium") {
-			var count = 0;
-			var result;
-			for(var key in medium) {
-				if(count == rand){
-					result = key;
-					break;
-				}
-				count++;
-			}
-			return result;
-		}
-
-		else if(level == "hard") {
-			var count = 0;
-			var result;
-			for(var key in hard) {
-				if(count == rand){
-					result = key;
-					break;
-				}
-				count++;
-			}
-			return result;
-		}
+		return result;
 	}
-	// document.write("ape\u0323\u0300re\u0323\u0300");
+
+	var mxd = 1;
+
+	function getMixed()
+	{
+		var word;
+
+		if (mxd == 1 || mxd == 2)
+			word = getWord(easy);
+		else if (mxd == 3 || mxd == 4)
+			word = getWord(medium);
+		else if (mxd == 5)
+			word = getWord(hard);
+
+		mxd++;
+		return word;
+	}
+
 });
+
+
+/** display lang and lvl somewhere on modal */
