@@ -49,24 +49,6 @@
 
 			<!-- <button type="button" class="btn btn-primary btn-lg buttons" id="playBtn" data-toggle="modal" data-target="#question-modal">Play!</button> -->
 
-			<!-- Modal for game settings -->
-			<!-- <div class="modal fade" id="settings-modal" ole="dialog" aria-hidden="true"> -->
-			<div class="container row" id="settings">
-				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-					<h4>Select language</h4>
-					<label class="radio" id="yoruba"><input type="radio" name="lang" value="yoruba" checked>Yor&ugrave;b&aacute;</label>
-					<label class="radio" id="igbo"><input type="radio" name="lang" value="igbo" disabled>Igbo</label>
-				</div>
-				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-					<h4>Select level</h4>
-					<label class="radio"><input type="radio" name="level" value="easy" checked>Easy</label>
-					<label class="radio"><input type="radio" name="level" value="medium">Medium</label>
-					<label class="radio"><input type="radio" name="level" value="hard">Hard</label>
-					<label class="radio"><input type="radio" name="level" value="mixed">Mixed</label>
-				</div>
-			</div>
-
-
 			<button type="button" class="btn btn-primary btn-lg buttons" id="playBtn" data-toggle="modal" data-target="#question-modal">Play!</button>
 
 			<!-- Modal for asking questions-->
@@ -82,54 +64,84 @@
 						</div>	<!-- .modal-header -->
 
 						<div class="modal-body">
-							<div class="row">
-								<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-									<p id="question-number">Question:<br>6 of 20</p>
+
+							<!-- Menu for game settings -->
+							<div class="container row" id="game-settings">
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+									<h4>Select language</h4>
+									<label class="radio" id="yoruba"><input type="radio" name="lang" value="yoruba" checked>Yor&ugrave;b&aacute;</label>
+									<label class="radio" id="igbo"><input type="radio" name="lang" value="igbo" disabled>Igbo</label>
 								</div>
 								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-									<p align="left" id="question-word">gfjhvebngbe test</p>
+									<h4>Select level</h4>
+									<label class="radio"><input type="radio" name="level" value="easy" checked>Easy</label>
+									<label class="radio"><input type="radio" name="level" value="medium">Medium</label>
+									<label class="radio"><input type="radio" name="level" value="hard">Hard</label>
+									<label class="radio"><input type="radio" name="level" value="mixed">Mixed</label>
 								</div>
-								<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-									<p id="total-score">Score:<br>5 pts</p>
-										<!-- &#7885;&#769; -->
-								</div>
-							</div>
+							</div>						
 
-							<hr>
+							<!-- Actual game -->
+							<div id="game" style="display: none;">
+								<div class="row" id="game-status">
+									<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+										<p id="question-number">#1</p>
+									</div>
+									<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+										<p align="left" id="question-word"></p>
+									</div>
+									<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+										<p id="question-info">
+											Yor&ugrave;b&aacute;<br>Easy
+										</p>
+									</div>
+								</div>	<!-- #game-status -->
 
-							<div class="container-fluid row">
-								<div id="waveform"></div>
 								<hr>
-							</div>
 
-							<br>
-							
-							<div class="row">
-								<div id="controls" align="center">
-									<button class="btn btn-default btn-lg" onclick="microphone.start()"><span class="glyphicon glyphicon-record"></span> Record</button>
-									<button class="btn btn-default btn-lg" onclick="microphone.stop()"><span class="glyphicon glyphicon-stop"></span> Stop</button>
+								<div class="container-fluid row">
+									<div id="waveform"></div>
+									<hr>
 								</div>
-							</div>
-						</div>	<!-- .modal-body -->
+
+								<br>
+								
+								<div class="row">
+									<div id="controls" align="center">
+										<button class="btn btn-default btn-lg" onclick="microphone.start()"><span class="glyphicon glyphicon-record"></span> Record</button>
+										<button class="btn btn-default btn-lg" onclick="microphone.stop()"><span class="glyphicon glyphicon-stop"></span> Stop</button>
+									</div>
+								</div>
+							</div>	<!-- #game -->
+
+						</div>		<!-- .modal-body -->
 
 						<div class="modal-footer">
-							<div class="col-md-2 col-sm-2 col-xs-2">
-							  <button type="button" class="btn btn-primary buttons" id="previous">
-							  	<span class="glyphicon glyphicon-arrow-left"></span>
-							  </button>
+
+							<div id="start-menu" align="center">
+								<button type="button" class="btn btn-primary buttons" id="start">Start</button>
 							</div>
-							<div class="col-md-8 col-sm-8 col-xs-8" id="submit" style="text-align:center">
-								<button class="btn btn-default btn-lg">Submit</button>
-							</div>
-							<div class="col-md-2 col-sm-2 col-xs-2">
-							  <button type="button" class="btn btn-primary buttons" id="next">
-							  	<span class="glyphicon glyphicon-arrow-right"></span>
-							  </button>
-							</div>
-						</div>	<!-- .modal-footer -->
-					</div>		<!-- .modal-content -->
-				</div>			<!-- .modal-dialog -->
-			</div>				<!-- .modal .fade -->	
+
+							<div id="game-nav" style="display: none;">
+								<div class="col-md-2 col-sm-2 col-xs-2">
+								  <button type="button" class="btn btn-primary buttons" id="previous">
+								  	<span class="glyphicon glyphicon-arrow-left"></span>
+								  </button>
+								</div>
+								<div class="col-md-8 col-sm-8 col-xs-8" id="submit" style="text-align:center">
+									<button class="btn btn-default btn-lg">Submit</button>
+								</div>
+								<div class="col-md-2 col-sm-2 col-xs-2">
+								  <button type="button" class="btn btn-primary buttons" id="next">
+								  	<span class="glyphicon glyphicon-arrow-right"></span>
+								  </button>
+								</div>
+							</div>	<!-- #game-nav -->
+							
+						</div>		<!-- .modal-footer -->
+					</div>			<!-- .modal-content -->
+				</div>				<!-- .modal-dialog -->
+			</div>					<!-- .modal .fade -->	
 			<hr>
 
 			<div class="row">

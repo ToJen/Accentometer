@@ -49,6 +49,13 @@ body {
   padding: 1em;
 }
 
+#question-number, #question-info {
+/*#game-status {*/
+  /*background-color: #7a3c8a;*/
+  font-family: "Chewy";
+  font-size: 20px;
+}
+
 #question-word {
   /*font-family: "Chewy";*/
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
