@@ -54,7 +54,7 @@ microphone.on('deviceError', function(code) {
 //microphone.stopDevice();
 
 // same as stopDevice() but also clears the wavesurfer canvas
-microphone.stop();
+// microphone.stop();
 
 // destroy the plugin
 //microphone.destroy();
