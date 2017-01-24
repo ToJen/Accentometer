@@ -7,6 +7,8 @@ $(document).ready(function() {
 
 	$('#previous').prop('disabled', true);
 	$('#submit').prop('disabled', true);
+	$('#record').prop('disabled', true);
+	$('#stop').prop('disabled', true);
 
 	// update game screen
 	$("#start").on("click", function() {
@@ -19,7 +21,7 @@ $(document).ready(function() {
 			$("#game-nav").fadeIn("fast");
 		});
 
-		question_number = 1;
+		question_number = 0;
 		$("#question-number").text(question_number);
 
 		selected_level = $('input[name=level]:checked').val();
@@ -137,6 +139,8 @@ $(document).ready(function() {
 			$('#submit').prop('disabled', false);
 		}
 		$('#previous').prop('disabled', false);
+		$('#record').prop('disabled', false);
+		$('#stop').prop('disabled', false);
 
 	});
 
@@ -188,17 +192,19 @@ $(document).ready(function() {
 	// reset game content on modal exit
 	$("#question-modal").on("hidden.bs.modal", function() {
 		
-		$("#question-word").text("");
+		$("#question-word").html("Click <strong><i>Next</i></strong> to begin!");
 
 		$("#game").hide();
 		$("#game-settings").show();
 		$("#game-nav").hide();
 		$("#start").show();
 
-		question_number = 1;
+		question_number = 0;
 		$('#next').prop('disabled', false);
 		$('#previous').prop('disabled', true);
 		$('#submit').prop('disabled', true);
+		$('#record').prop('disabled', true);
+		$('#stop').prop('disabled', true);
 
 
 		microphone.stop();
