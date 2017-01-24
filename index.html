@@ -85,14 +85,16 @@
 							<div id="game" style="display: none;">
 								<div class="row" id="game-status">
 									<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-										<p id="question-number">#1</p>
+										<p><span id="question-number"></span>/5</p>
 									</div>
 									<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
 										<p align="left" id="question-word"></p>
 									</div>
 									<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 										<p id="question-info">
-											Yor&ugrave;b&aacute;<br>Easy
+											<span id="lang">Yor&ugrave;b&aacute;</span>
+											<br>
+											<span id="lang-level">Easy</span>
 										</p>
 									</div>
 								</div>	<!-- #game-status -->
@@ -128,8 +130,8 @@
 								  	<span class="glyphicon glyphicon-arrow-left"></span>
 								  </button>
 								</div>
-								<div class="col-md-8 col-sm-8 col-xs-8" id="submit" style="text-align:center">
-									<button class="btn btn-default btn-lg">Submit</button>
+								<div class="col-md-8 col-sm-8 col-xs-8" style="text-align:center">
+									<button class="btn btn-default btn-lg" id="submit">Submit</button>
 								</div>
 								<div class="col-md-2 col-sm-2 col-xs-2">
 								  <button type="button" class="btn btn-primary buttons" id="next">
@@ -137,7 +139,7 @@
 								  </button>
 								</div>
 							</div>	<!-- #game-nav -->
-							
+
 						</div>		<!-- .modal-footer -->
 					</div>			<!-- .modal-content -->
 				</div>				<!-- .modal-dialog -->

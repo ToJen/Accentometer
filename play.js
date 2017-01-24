@@ -1,6 +1,15 @@
 $(document).ready(function() {
 
-	$("#start").on("click", function() {	// update game screen
+	var question_number;
+	var selected_level;
+	var selected_lang;
+	var max_questions = 5;
+
+	$('#previous').prop('disabled', true);
+	$('#submit').prop('disabled', true);
+
+	// update game screen
+	$("#start").on("click", function() {
 		// console.log("Game started...");		// debug
 		$("#game-settings").fadeOut('fast', function() {
 			$("#game").fadeIn("fast");
@@ -9,6 +18,14 @@ $(document).ready(function() {
 		$("#start").fadeOut('fast', function() {
 			$("#game-nav").fadeIn("fast");
 		});
+
+		question_number = 1;
+		$("#question-number").text(question_number);
+
+		selected_level = $('input[name=level]:checked').val();
+		$("#lang-level").text(selected_level);
+		// selected_lang = $('input[name=lang]:checked').val();
+		// $("#lang").text(selected_lang);
 	});
 
 	var easy = {
@@ -92,11 +109,12 @@ $(document).ready(function() {
 
 	$('#next').click(function() {
 		var txt;
+		question_number++;
 
 		// if($('input[name=lang]:checked').val() === "yoruba") {
 		// }
 
-		switch($('input[name=level]:checked').val())
+		switch(selected_level)
 		{
 			case "easy":
 				txt = getWord(easy);
@@ -112,8 +130,27 @@ $(document).ready(function() {
 		}
 
 		$("#question-word").html(txt);
+		$("#question-number").text(question_number);
+
+		if (question_number == max_questions) {
+			$('#next').prop('disabled', true);
+			$('#submit').prop('disabled', false);
+		}
+		$('#previous').prop('disabled', false);
 
 	});
+
+	$('#previous').click(function() {
+		if(question_number == 1)
+			$('#previous').prop('disabled', true);
+
+		question_number--;
+
+	});
+
+	// $('#submit').on('click', function() {
+	// 	console.log("Submitting...");
+	// });
 
 	function getWord(level)
 	{
@@ -148,22 +185,36 @@ $(document).ready(function() {
 		return word;
 	}
 
-	// reset content on modal exit
+	// reset game content on modal exit
 	$("#question-modal").on("hidden.bs.modal", function() {
-		// console.log("modal closed");
-		// reset text
+		
 		$("#question-word").text("");
 
-		// reset footer
 		$("#game").hide();
 		$("#game-settings").show();
-
 		$("#game-nav").hide();
 		$("#start").show();
+
+		question_number = 1;
+		$('#next').prop('disabled', false);
+		$('#previous').prop('disabled', true);
+		$('#submit').prop('disabled', true);
+
 
 		microphone.stop();
 
 	});
+
+	/*function disableButtons() {
+		$("#next, #previous").prop("disabled", false);
+		if (question_number == max_questions) {
+			$('#next').prop('disabled', true);
+		}
+		else if (question_number == 1) {
+			$('#previous').prop('disabled', true);
+		}
+	}*/
+
 
 });
 

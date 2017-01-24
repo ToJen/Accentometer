@@ -33,7 +33,9 @@ body {
   background: #8b5e99;
   border-color: white;
 }
-.buttons:hover, .buttons:focus, .buttons:active, .buttons:active:focus  {
+.buttons:hover, .buttons:focus, .buttons:active, .buttons:active:focus 
+/*, .buttons:disabled, .buttons:disabled:active:focus */
+{
   background: white;
   border-color: #8b5e99;
   color: #8b5e99;
