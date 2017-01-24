@@ -5,12 +5,12 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta charset="UTF-8">
 
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.2.3/wavesurfer.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.2.3/plugin/wavesurfer.microphone.min.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.3.0/wavesurfer.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.3.0/plugin/wavesurfer.microphone.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato|Chewy">
 		<link rel="stylesheet" href="styles.css">
 	</head>
@@ -88,7 +88,7 @@
 										<p><span id="question-number"></span>/5</p>
 									</div>
 									<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-										<p align="left" id="question-word"></p>
+										<p align="left" id="question-word">Click <strong><i>Next</i></strong> to begin!</p>
 									</div>
 									<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 										<p id="question-info">
@@ -110,8 +110,8 @@
 								
 								<div class="row">
 									<div id="controls" align="center">
-										<button class="btn btn-default btn-lg" onclick="microphone.start()"><span class="glyphicon glyphicon-record"></span> Record</button>
-										<button class="btn btn-default btn-lg" onclick="microphone.stop()"><span class="glyphicon glyphicon-stop"></span> Stop</button>
+										<button class="btn btn-default btn-lg" onclick="microphone.start()" id="record"><span class="glyphicon glyphicon-record"></span> Record</button>
+										<button class="btn btn-default btn-lg" onclick="microphone.stop()" id="stop"><span class="glyphicon glyphicon-stop"></span> Stop</button>
 									</div>
 								</div>
 							</div>	<!-- #game -->
@@ -128,7 +128,7 @@
 								<div class="col-md-2 col-sm-2 col-xs-2">
 								  <button type="button" class="btn btn-primary buttons" id="previous">
 								  	<span class="glyphicon glyphicon-arrow-left"></span>
-								  </button>
+								  </button>Previous
 								</div>
 								<div class="col-md-8 col-sm-8 col-xs-8" style="text-align:center">
 									<button class="btn btn-default btn-lg" id="submit">Submit</button>
@@ -136,7 +136,7 @@
 								<div class="col-md-2 col-sm-2 col-xs-2">
 								  <button type="button" class="btn btn-primary buttons" id="next">
 								  	<span class="glyphicon glyphicon-arrow-right"></span>
-								  </button>
+								  </button>Next
 								</div>
 							</div>	<!-- #game-nav -->
 
