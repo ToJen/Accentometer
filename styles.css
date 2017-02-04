@@ -1,5 +1,5 @@
 body {
-  margin: 0px 0px;
+  /*margin: 0px 0px;*/
   font-family: "Lato";
 }
 
@@ -78,6 +78,16 @@ body {
 #controls .btn{
   background-color: #8b5e99;
   color: white;
+}
+
+#final-score {
+  font-family: "Chewy";
+  font-size: 40pt;
+  text-align: center;
+}
+
+#score-message {
+  text-align: center;
 }
 
 .table-bordered {
