@@ -169,7 +169,7 @@ $(document).ready(function() {
 			$("#submit-message").fadeIn("fast");
 		});	
 
-		var id = setInterval(makeProgress, 50);	
+		var id = setInterval(makeProgress, 45);	
 
 		function makeProgress() {
 			if(width == 150) {
