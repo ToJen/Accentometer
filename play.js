@@ -4,6 +4,8 @@ $(document).ready(function() {
 	var selected_level;
 	var selected_lang;
 	var max_questions = 5;
+	var solved = false;
+	var width = 0;
 
 	$('#previous').prop('disabled', true);
 	$('#submit').prop('disabled', true);
@@ -109,39 +111,45 @@ $(document).ready(function() {
 
 	};
 
+	$("#record").click(function() {
+		solved = true;
+	});
+
 	$('#next').click(function() {
-		var txt;
-		question_number++;
+		// if(solved==false) {}
+		// else {
+			var txt;
+			question_number++;
 
-		// if($('input[name=lang]:checked').val() === "yoruba") {
+			// if($('input[name=lang]:checked').val() === "yoruba") {
+			// }
+
+			switch(selected_level)
+			{
+				case "easy":
+					txt = getWord(easy);
+					break;
+				case "medium":
+					txt = getWord(medium);
+					break;
+				case "hard":
+					txt = getWord(hard);
+					break;
+				default:
+					txt = getMixed();
+			}
+
+			$("#question-word").html(txt);
+			$("#question-number").text(question_number);
+
+			if (question_number == max_questions) {
+				$('#next').prop('disabled', true);
+				$('#submit').prop('disabled', false);
+			}
+			$('#previous').prop('disabled', false);
+			$('#record').prop('disabled', false);
+			$('#stop').prop('disabled', false);
 		// }
-
-		switch(selected_level)
-		{
-			case "easy":
-				txt = getWord(easy);
-				break;
-			case "medium":
-				txt = getWord(medium);
-				break;
-			case "hard":
-				txt = getWord(hard);
-				break;
-			default:
-				txt = getMixed();
-		}
-
-		$("#question-word").html(txt);
-		$("#question-number").text(question_number);
-
-		if (question_number == max_questions) {
-			$('#next').prop('disabled', true);
-			$('#submit').prop('disabled', false);
-		}
-		$('#previous').prop('disabled', false);
-		$('#record').prop('disabled', false);
-		$('#stop').prop('disabled', false);
-
 	});
 
 	$('#previous').click(function() {
@@ -152,9 +160,33 @@ $(document).ready(function() {
 
 	});
 
-	// $('#submit').on('click', function() {
-	// 	console.log("Submitting...");
-	// });
+	$('#submit').on('click', function() {
+		// console.log("Submitting...");
+		$("#game").fadeOut('fast', function() {
+			$("#submitting").fadeIn("fast");
+		});
+		$("#game-nav").fadeOut('fast', function() {
+			$("#submit-message").fadeIn("fast");
+		});	
+
+		var id = setInterval(makeProgress, 50);	
+
+		function makeProgress() {
+			if(width == 150) {
+				clearInterval(id);
+				launchResults();
+			} else {
+				width++;
+				document.getElementById("actual-bar").style.width = width+"%";
+			}
+		}
+
+		function launchResults() {
+			$("#question-modal").modal('hide');
+			$("#result-modal").modal('show');
+		}
+
+	});
 
 	function getWord(level)
 	{
@@ -199,6 +231,7 @@ $(document).ready(function() {
 		$("#game-nav").hide();
 		$("#start").show();
 
+
 		question_number = 0;
 		$('#next').prop('disabled', false);
 		$('#previous').prop('disabled', true);
@@ -206,6 +239,9 @@ $(document).ready(function() {
 		$('#record').prop('disabled', true);
 		$('#stop').prop('disabled', true);
 
+		$("#submitting").css('display', "none");
+		$("#submit-message").css('display', "none");
+		width = 0;
 
 		microphone.stop();
 

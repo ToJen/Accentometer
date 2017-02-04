@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<title>ACCENTOMETER || Rate your accent!</title>
-		<link rel="icon" type="img/ico" href="imgs/noun_603654_cc.png">
+		<link rel="icon" type="image/png" href="imgs/noun_603654_cc.png">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta charset="UTF-8">
 
@@ -117,6 +117,10 @@
 								</div>
 							</div>	<!-- #game -->
 
+							<div class="progress" id="submitting" style="display:none">
+								<div class="progress-bar progress-bar-striped active" id="actual-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:10%"></div>
+							</div>	<!-- # -->
+
 						</div>		<!-- .modal-body -->
 
 						<div class="modal-footer">
@@ -141,10 +145,35 @@
 								</div>
 							</div>	<!-- #game-nav -->
 
+							<div id="submit-message" style="display:none">
+								<p>Sending your answers to WAEC headquarters..</p>
+							</div>
+
 						</div>		<!-- .modal-footer -->
 					</div>			<!-- .modal-content -->
 				</div>				<!-- .modal-dialog -->
 			</div>					<!-- .modal .fade -->	
+
+			<div class="modal fade" id="result-modal" role="dialog" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							  <span aria-hidden="true">&times;</span>
+							</button>
+							<h4 class="modal-title">Your score</h4>
+						</div>
+
+						<div class="modal-body">
+							<h2 id-"final-score">0%</h2>
+							<p id="score-message">Na wa for you o! You dey sleep for class?</p>
+						</div>
+
+					</div>	<!-- #result-modal  -->
+				</div>		<!-- .modal-dialog  -->
+			</div>			<!-- .modal-content -->
+
 			<hr>
 
 			<div class="row">
@@ -152,7 +181,7 @@
 				<div class="col-md-8" id="demo">
 					<h3>How to play:</h3>
 					<p>blah blah blah blah blah</p>
-					<img src="imgs/saworoide.jpg" class="img-responsive" alt="The Saworoide in full colour by digitaltemi">
+					<img src="imgs/saworoide.jpg" class="img-responsive" alt="The Saworoide in full colour by digitaltemi on flickr.com">
 					<br>
 				</div>	<!-- #demo -->
 
