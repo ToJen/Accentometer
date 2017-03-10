@@ -25,10 +25,14 @@ $("#backToTop").click(function() {
 
 
 // waveform script
+    // height: 300,
 var wavesurfer = WaveSurfer.create({
     container: '#waveform',
     waveColor: 'violet',
-    hideScrollbar: true
+    hideScrollbar: true,
+    // barWidth: 30,
+    barHeight: 100
+    // pixelRatio: window.devicePixelRatio || screen.deviceXDPI / screen.logicalXDPI
 });
 
 var microphone = Object.create(WaveSurfer.Microphone);
@@ -58,3 +62,8 @@ microphone.on('deviceError', function(code) {
 
 // destroy the plugin
 //microphone.destroy();
+
+// $(window).resize(function() {
+//   wavesurfer.empty();
+//   wavesurfer.drawBuffer();
+// });
