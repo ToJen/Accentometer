@@ -112,7 +112,8 @@ $(document).ready(function() {
 	};
 
 	$("#record").click(function() {
-		solved = true;
+		// $("#waveform").animate({zoom: '400%'}, "slow");
+		// solved = true;
 	});
 
 	$('#next').click(function() {
