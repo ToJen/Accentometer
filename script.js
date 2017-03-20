@@ -27,11 +27,11 @@ $("#backToTop").click(function() {
 // waveform script
     // height: 300,
 var wavesurfer = WaveSurfer.create({
-    container: '#waveform',
-    waveColor: 'violet',
+    container: "#waveform",
+    waveColor: "violet",
     hideScrollbar: true,
     // barWidth: 30,
-    barHeight: 100
+    barHeight: 3
     // pixelRatio: window.devicePixelRatio || screen.deviceXDPI / screen.logicalXDPI
 });
 
