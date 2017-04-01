@@ -24,15 +24,11 @@ $("#backToTop").click(function() {
 /////////////////////////////////////////////
 
 
-// waveform script
-    // height: 300,
 var wavesurfer = WaveSurfer.create({
     container: "#waveform",
     waveColor: "violet",
     hideScrollbar: true,
-    // barWidth: 30,
-    barHeight: 3
-    // pixelRatio: window.devicePixelRatio || screen.deviceXDPI / screen.logicalXDPI
+    barHeight: 10
 });
 
 var microphone = Object.create(WaveSurfer.Microphone);
